@@ -1,19 +1,18 @@
 //-----------------------------------------------------------------------------
 // index.test.js
 //-----------------------------------------------------------------------------
-const {hello, goodbye, Set } = require('./index')
+import { solution } from './index';
 
-describe('Hello', () => {
-  it('Returns hello', () => {
-    expect(hello()).toBe('Hello');
+describe('solution', () => {
+  it('Calculates the max enjoyment', () => {
+    expect(solution([ [1, 2, 3], [5, 1, 2], [9, 8, 6] ], 3)).toBe(16);
   })
 
-  it('Returns goodbye', () => {
-    expect(goodbye()).toBe('Goodbye');
-  })
-
-  it('Returns farewell', () => {
-    let s = new Set();
-    expect(s.farewell()).toBe('Farewell');
+  it('Fails to calculate max enjoyment', () => {
+    expect(solution([ [1, 2, 3], [5, 1, 2], [9, 4, 3] ], 3)).toBe(13);
   })
 })
+
+
+
+
